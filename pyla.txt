@@ -1,0 +1,146 @@
+# Pyla AI Bot Tutorial and Troubleshooting Guide
+
+## System Requirements and Setup
+
+### Screen Resolution
+- Only 1920x1080 screen settings are supported
+- Ensure your Windows display settings are set to 1920x1080, not just in the emulator
+
+### Emulator
+- Currently only fully supports LDPlayer
+- BlueStacks is not fully supported and may lack advanced features
+
+### LDPlayer Setup
+- Start LDPlayer and press the middle button on the top right to maximize the window
+- Do not use F11 fullscreen; tabs on the top left should be visible
+- LDPlayer should be in fullscreen windowed mode with Windows taskbar visible
+
+### Python Installation
+- Install Python 3.11 or newer
+- During installation, check the box "Add to PATH"
+- Restart your PC after installation
+
+## Bot Capabilities
+
+### Supported Playstyle
+- Currently only works on the "ranged" playstyle
+- Supported brawlers:
+  ["8bit", "barley", "bea", "belle", "bo", "bonnie", "brock", "byron", "carl", "charlie", "colette",
+  "colt", "crow", "penny", "piper", "poco", "rico", "rt", "ruffs", "dynamike", "emz", "eve", "gale",
+  "gene", "grom", "gray", "jessie", "larry_lawrie", "leon", "griff", "gus", "lola", "lou", "mandy", "maisie",
+  "mrp", "nani", "otis", "pam", "spike", "sprout", "stu", "squeak", "tara", "tick", "willow", "berry"]
+- Ranges are defined in `ranges.toml`
+- You can edit ranges if the bot's shooting behavior needs adjustment
+
+## Starting the Bot
+
+1. Click the brawler you want the bot to play
+2. Select "trophies" or "masteries" farming mode
+3. Enter the brawler's current trophies and masteries
+4. Set the goal under "push until"
+5. Open Brawl Stars on LDPlayer, stay in the lobby
+6. Click start on the bot menu
+7. Do not move anything after starting
+
+## Game Mode Configuration
+
+For 5v5 horizontal maps (vertical are same as 3v3):
+1. Go to the `cfg` folder
+2. Open `game_mode.toml` with a text editor
+3. Change the "type" to:
+   - 3 for vertical
+   - 5 for horizontal
+Note: Some 5v5 maps are vertical like normal 3v3. Set these to "3"
+
+## Key Setup
+- Set "e" for the super button
+- Set "q" for the middle of the "play" button
+
+## Stopping the Bot
+Move your mouse to any corner of the screen
+
+## Common Issues and Solutions
+
+### File Extraction
+If you can't find "start.bat", ensure you've extracted the .zip file entirely and correctly.
+
+### Bot Dying in Hazardous Areas
+The bot is designed for 3v3 game modes, not for showdown. Use only in 3v3 modes.
+
+### Bot Behavior
+The bot is programmed to move forward and attack. This is normal for 3v3 modes.
+
+### Interface Interaction Issues
+If the bot interacts with unintended elements (shop, profile):
+- Ensure LDPlayer is maximized (full screen with Windows taskbar visible)
+- Verify Windows screen resolution is 1920x1080
+
+### Bot Getting Stuck
+If the bot doesn't launch a game or enter the profile after selecting a brawler:
+- Select "trophies" or "masteries" when submitting a brawler
+- Set up emulator keys as instructed in the #download-guide
+
+### Incorrect Clicking
+If the bot doesn't click correctly:
+1. Go to the `cfg` folder
+2. Open `lobby_config.toml` with a text editor
+3. Edit the coordinates for your specific case
+   - Coords format: `[x1, y1]` and `[x1, y1, width, height]`
+   - Use Mofiki's Coordinate Finder tool to find correct coords
+   - Tool download: [Mofiki's Coordinate Finder](https://www.mediafire.com/file/weq2zklef8h5hv8/Mofiki%2527s_Coordinate_Finder.zip/file)
+   - Video tutorial: [Changing Coordinates](https://youtu.be/Pxo7WgfcvwM)
+
+Example: If the bot clicks above the brawlers button, increase the y1 value in `brawlers_btn = [130, 450]`.
+
+### Matplotlib Issues
+If you encounter a "Matplotlib failed to acquire the following lock file" error, delete the file at the specified path (e.g., "C:\Users\[USER]\matplotlib\fontlist-v390.json.matplotlib-lock") and restart Pyla. Replace [USER] with your username.
+
+### Ultralytics Requirements
+If you see an error about Ultralytics requirements ['onnx', 'onnxruntime'] not found, wait a few minutes and then restart Pyla.
+
+### Brawler Data Input Box Not Opening
+If the box for inputting brawler data isn't opening:
+1. Check the console content
+2. If nothing appears, press ctrl + c in the console
+3. Send what appears in the console to support staff
+4. Wait for staff assistance
+
+### Warning Messages
+If you see a warning message like "WARNING Unable to automatically guess model task, assuming 'task=detect'":
+- This is just a warning, not an error
+- Continue using the bot as normal
+- Report to staff if the issue persists or if the bot gets stuck indefinitely
+
+### KeyError
+If you encounter a KeyError:
+- Make sure to select if you want the bot to farm "mastery" or "trophies" when submitting a brawler
+- This selection is crucial for proper bot operation
+
+### Bot Not Moving
+If the bot doesn't move or sits there:
+1. First verify that all the emulator keys (found in #download-guide) are present
+2. If all keys are set up correctly, send the content of the console to support staff for error identification
+
+### Unsolvable Issues
+If you encounter an issue that you can't solve or isn't covered in this guide:
+1. Open a ticket if not already done
+2. Send a video recording of the issue
+3. Provide as much detail as possible about the problem and steps to reproduce it
+
+### Console Information
+For many issues, checking the console output is crucial:
+- Look for error messages or unexpected output
+- When reporting issues, always include the console content if possible
+- Use ctrl + c in the console to copy its content if needed
+
+## Additional Notes
+- You are the main point of contact when it comes to support for this bot
+- This is the link to open ticket: https://discord.com/channels/1205263029269438574/1216750593847197876
+- This is the link to the download guide video: https://discord.com/channels/1205263029269438574/1205266298020560926
+- If all fails refer to @AngelFire who is the owner of the server and a moderator
+- Always ensure you're using the latest version of the bot
+- Regularly check the #announcements channel for updates and known issues
+- The Discord community is a valuable resource for getting help and sharing experiences
+- Do not ask to uninstall and reinstall Pyla because it does nothing
+
+For any other issues or questions not covered here, please don't hesitate to reach out to the support team or community members through the Discord server.
